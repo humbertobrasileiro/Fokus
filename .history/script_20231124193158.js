@@ -23,9 +23,6 @@ longoBt.addEventListener('click', () => {
 
 function alterarContexto(contexto) {
   
-  botoes.forEach(function (contexto) {
-    contexto.classList.remove('active')
-  })
 
   html.setAttribute('data-contexto', contexto)
   banner.setAttribute('src', `./imagens/${contexto}.png`)
@@ -53,4 +50,5 @@ function alterarContexto(contexto) {
     default:
       break;
   }
+  titulo.setAttribute();
 }

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1700856258435,
@@ -12,6 +12,14 @@
                 {
                     "date": 1700857806809,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n                 Otimize sua produtividade,<br>\r\n                 <strong class=\"app__title-strong\">mergulhe no que importa.</strong>\r\n             </h1>\r\n             <figure class=\"app__image-figure\">\r\n-                <img class=\"app__image\" src=\"/imagens/foco.png\" alt=\"\">\r\n+                <img class=\"app__image\" src=\"./imagens/foco.png\" alt=\"\">\r\n             </figure>\r\n         </section>\r\n         <section class=\"app__section-card-container\">\r\n             <div class=\"app__card\">\r\n"
+                },
+                {
+                    "date": 1700860305632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n <body>\r\n     <main class=\"app\">\r\n         <header class=\"app__header\">\r\n             <figure class=\"app__logo-figure\">\r\n-                <img class=\"app__logo-image\" src=\"/imagens/logo.png\" alt=\"\">\r\n+                <img class=\"app__logo-image\" src=\"./imagens/logo.png\" alt=\"\">\r\n             </figure>\r\n         </header>\r\n         <section class=\"app__section-banner-container\">\r\n             <h1 class=\"app__title\">\r\n"
+                },
+                {
+                    "date": 1700860368400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n                     </li>\r\n                 </ul>\r\n                 <div class=\"app__card-primary-button-wrapper\">\r\n                     <button id=\"start-pause\" class=\"app__card-primary-button\">\r\n-                        <img class=\"app__card-primary-butto-icon\" src=\"/imagens/play_arrow.png\" alt=\"\">\r\n+                        <img class=\"app__card-primary-butto-icon\" src=\"./imagens/play_arrow.png\" alt=\"\">\r\n                         <span>Começar</span>\r\n                     </button>\r\n                 </div>\r\n             </div>\r\n"
                 }
             ],
             "date": 1700856258435,

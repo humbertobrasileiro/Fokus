@@ -53,4 +53,5 @@ function alterarContexto(contexto) {
     default:
       break;
   }
+  titulo.setAttribute();
 }

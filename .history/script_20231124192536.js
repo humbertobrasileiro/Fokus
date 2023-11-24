@@ -22,7 +22,6 @@ longoBt.addEventListener('click', () => {
 })
 
 function alterarContexto(contexto) {
-  
   botoes.forEach(function (contexto) {
     contexto.classList.remove('active')
   })
@@ -53,4 +52,5 @@ function alterarContexto(contexto) {
     default:
       break;
   }
+  titulo.setAttribute();
 }

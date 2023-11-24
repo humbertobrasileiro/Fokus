@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1700856322463,
@@ -28,6 +28,58 @@
                 {
                     "date": 1700857779018,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,11 @@\n })\r\n \r\n curtoBt.addEventListener('click', () => {\r\n   html.setAttribute('data-contexto', 'descanso-curto')\r\n+  banner.setAttribute('src', './imagens/descanso-curto.png')\r\n })\r\n \r\n longoBt.addEventListener('click', () => {\r\n   html.setAttribute('data-contexto', 'descanso-longo')\r\n+  banner.setAttribute('src', './imagens/descanso-longo.png')\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700859147365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,17 +5,19 @@\n const banner = document.querySelector('.app__image')\r\n \r\n \r\n focoBt.addEventListener('click', () => {\r\n-  html.setAttribute('data-contexto', 'foco')\r\n-  banner.setAttribute('src', './imagens/foco.png')\r\n+  alterarContexto('foco')\r\n })\r\n \r\n curtoBt.addEventListener('click', () => {\r\n-  html.setAttribute('data-contexto', 'descanso-curto')\r\n-  banner.setAttribute('src', './imagens/descanso-curto.png')\r\n+  alterarContexto('descanso-curto')\r\n })\r\n \r\n longoBt.addEventListener('click', () => {\r\n-  html.setAttribute('data-contexto', 'descanso-longo')\r\n\\ No newline at end of file\n-  banner.setAttribute('src', './imagens/descanso-longo.png')\r\n-})\n+  alterarContexto('descanso-longo')\r\n+})\r\n+\r\n+function alterarContexto(contexto) {\r\n+  html.setAttribute('data-contexto', contexto)\r\n+  banner.setAttribute('src', `./imagens/${contexto}.png`)\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700860216352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n const focoBt = document.querySelector('.app__card-button--foco')\r\n const curtoBt = document.querySelector('.app__card-button--curto')\r\n const longoBt = document.querySelector('.app__card-button--longo')\r\n const banner = document.querySelector('.app__image')\r\n+const titulo = documento.querySelector('.app__title')\r\n \r\n-\r\n focoBt.addEventListener('click', () => {\r\n   alterarContexto('foco')\r\n })\r\n \r\n@@ -19,5 +19,31 @@\n \r\n function alterarContexto(contexto) {\r\n   html.setAttribute('data-contexto', contexto)\r\n   banner.setAttribute('src', `./imagens/${contexto}.png`)\r\n+  switch (contexto) {\r\n+    case \"foco\":\r\n+      titulo.innerHTML = `\r\n+        Otimize sua produtividade,<br>\r\n+        <strong class=\"app__title-strong\">mergulhe no que importa.</strong>\r\n+      `\r\n+      break;\r\n+  \r\n+    case \"descanso-curto\":\r\n+      titulo.innerHTML = `\r\n+        Que tal dar uma respirada?,<br>\r\n+        <strong class=\"app__title-strong\">Faça uma pausa curta!</strong>\r\n+      `\r\n+      break;\r\n+\r\n+    case \"descanso-longo\":\r\n+      titulo.innerHTML = `\r\n+        Hora de voltar à superfície.,<br>\r\n+        <strong class=\"app__title-strong\">Faça uma pausa longa.</strong>\r\n+      `\r\n+      break;\r\n+\r\n+    default:\r\n+      break;\r\n+  }\r\n+  titulo.setAttribute();\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700860260836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n const focoBt = document.querySelector('.app__card-button--foco')\r\n const curtoBt = document.querySelector('.app__card-button--curto')\r\n const longoBt = document.querySelector('.app__card-button--longo')\r\n const banner = document.querySelector('.app__image')\r\n-const titulo = documento.querySelector('.app__title')\r\n+const titulo = document.querySelector('.app__title')\r\n \r\n focoBt.addEventListener('click', () => {\r\n   alterarContexto('foco')\r\n })\r\n"
+                },
+                {
+                    "date": 1700860522574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,10 +29,9 @@\n       break;\r\n   \r\n     case \"descanso-curto\":\r\n       titulo.innerHTML = `\r\n-        Que tal dar uma respirada?,<br>\r\n-        <strong class=\"app__title-strong\">Faça uma pausa curta!</strong>\r\n+        Que tal dar uma respirada?,<br> <strong class=\"app__title-strong\">Faça uma pausa curta!</strong>\r\n       `\r\n       break;\r\n \r\n     case \"descanso-longo\":\r\n"
+                },
+                {
+                    "date": 1700860581036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,15 +29,15 @@\n       break;\r\n   \r\n     case \"descanso-curto\":\r\n       titulo.innerHTML = `\r\n-        Que tal dar uma respirada?,<br> <strong class=\"app__title-strong\">Faça uma pausa curta!</strong>\r\n+        Que tal dar uma respirada?<br> <strong class=\"app__title-strong\">Faça uma pausa curta!</strong>\r\n       `\r\n       break;\r\n \r\n     case \"descanso-longo\":\r\n       titulo.innerHTML = `\r\n-        Hora de voltar à superfície.,<br>\r\n+        Hora de voltar à superfície.<br>\r\n         <strong class=\"app__title-strong\">Faça uma pausa longa.</strong>\r\n       `\r\n       break;\r\n \r\n"
+                },
+                {
+                    "date": 1700864167370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,16 +6,19 @@\n const titulo = document.querySelector('.app__title')\r\n \r\n focoBt.addEventListener('click', () => {\r\n   alterarContexto('foco')\r\n+  focoBt.classList.add('active')\r\n })\r\n \r\n curtoBt.addEventListener('click', () => {\r\n   alterarContexto('descanso-curto')\r\n+  curtoBt.classList.add('active')\r\n })\r\n \r\n longoBt.addEventListener('click', () => {\r\n   alterarContexto('descanso-longo')\r\n+  longoBt.classList.add('active')\r\n })\r\n \r\n function alterarContexto(contexto) {\r\n   html.setAttribute('data-contexto', contexto)\r\n"
+                },
+                {
+                    "date": 1700864413309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n const curtoBt = document.querySelector('.app__card-button--curto')\r\n const longoBt = document.querySelector('.app__card-button--longo')\r\n const banner = document.querySelector('.app__image')\r\n const titulo = document.querySelector('.app__title')\r\n+const botoes = document.querySelectorAll('.app__card-button')\r\n \r\n focoBt.addEventListener('click', () => {\r\n   alterarContexto('foco')\r\n   focoBt.classList.add('active')\r\n@@ -20,8 +21,12 @@\n   longoBt.classList.add('active')\r\n })\r\n \r\n function alterarContexto(contexto) {\r\n+  botoes.forEach(function (contexto) {\r\n+    contexto.classList.remove('active')\r\n+  })\r\n+\r\n   html.setAttribute('data-contexto', contexto)\r\n   banner.setAttribute('src', `./imagens/${contexto}.png`)\r\n   switch (contexto) {\r\n     case \"foco\":\r\n"
+                },
+                {
+                    "date": 1700864453330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const curtoBt = document.querySelector('.app__card-button--curto')\r\n const longoBt = document.querySelector('.app__card-button--longo')\r\n const banner = document.querySelector('.app__image')\r\n const titulo = document.querySelector('.app__title')\r\n-const botoes = document.querySelectorAll('.app__card-button')\r\n+const botoes = document.querySelectorAll('app__card-button')\r\n \r\n focoBt.addEventListener('click', () => {\r\n   alterarContexto('foco')\r\n   focoBt.classList.add('active')\r\n"
+                },
+                {
+                    "date": 1700864736235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n const curtoBt = document.querySelector('.app__card-button--curto')\r\n const longoBt = document.querySelector('.app__card-button--longo')\r\n const banner = document.querySelector('.app__image')\r\n const titulo = document.querySelector('.app__title')\r\n-const botoes = document.querySelectorAll('app__card-button')\r\n+const botoes = document.querySelectorAll('.app__card-button')\r\n \r\n focoBt.addEventListener('click', () => {\r\n   alterarContexto('foco')\r\n   focoBt.classList.add('active')\r\n"
+                },
+                {
+                    "date": 1700865102006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n   longoBt.classList.add('active')\r\n })\r\n \r\n function alterarContexto(contexto) {\r\n+  \r\n   botoes.forEach(function (contexto) {\r\n     contexto.classList.remove('active')\r\n   })\r\n \r\n"
+                },
+                {
+                    "date": 1700865118346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,8 @@\n })\r\n \r\n function alterarContexto(contexto) {\r\n   \r\n-  botoes.forEach(function (contexto) {\r\n-    contexto.classList.remove('active')\r\n-  })\r\n \r\n   html.setAttribute('data-contexto', contexto)\r\n   banner.setAttribute('src', `./imagens/${contexto}.png`)\r\n   switch (contexto) {\r\n"
+                },
+                {
+                    "date": 1700865185513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,11 @@\n })\r\n \r\n function alterarContexto(contexto) {\r\n   \r\n+  botoes.forEach(function (contexto) {\r\n+    contexto.classList.remove('active')\r\n+  })\r\n \r\n   html.setAttribute('data-contexto', contexto)\r\n   banner.setAttribute('src', `./imagens/${contexto}.png`)\r\n   switch (contexto) {\r\n"
+                },
+                {
+                    "date": 1700865276047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,6 +52,5 @@\n \r\n     default:\r\n       break;\r\n   }\r\n-  titulo.setAttribute();\r\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1700856322463,
