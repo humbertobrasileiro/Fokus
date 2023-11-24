@@ -12,10 +12,8 @@ focoBt.addEventListener('click', () => {
 
 curtoBt.addEventListener('click', () => {
   html.setAttribute('data-contexto', 'descanso-curto')
-  banner.setAttribute('src', './imagens/descanso-curto.png')
 })
 
 longoBt.addEventListener('click', () => {
   html.setAttribute('data-contexto', 'descanso-longo')
-  banner.setAttribute('src', './imagens/descanso-longo.png')
 })

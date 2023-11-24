@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1700856322463,
@@ -20,6 +20,14 @@
                 {
                     "date": 1700857019225,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,16 @@\n const html = document.querySelector('html')\r\n const focoBt = document.querySelector('.app__card-button--foco')\r\n const curtoBt = document.querySelector('.app__card-button--curto')\r\n+const longoBt = document.querySelector('.app__card-button--longo')\r\n \r\n focoBt.addEventListener('click', () => {\r\n   html.setAttribute('data-contexto', 'foco')\r\n })\r\n \r\n curtoBt.addEventListener('click', () => {\r\n   html.setAttribute('data-contexto', 'descanso-curto')\r\n+})\r\n+\r\n+longoBt.addEventListener('click', () => {\r\n+  html.setAttribute('data-contexto', 'descanso-longo')\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700857750328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,14 @@\n const html = document.querySelector('html')\r\n const focoBt = document.querySelector('.app__card-button--foco')\r\n const curtoBt = document.querySelector('.app__card-button--curto')\r\n const longoBt = document.querySelector('.app__card-button--longo')\r\n+const banner = document.querySelector('.app__image')\r\n \r\n+\r\n focoBt.addEventListener('click', () => {\r\n   html.setAttribute('data-contexto', 'foco')\r\n+  banner.setAttribute('src', './imagens/foco.png')\r\n })\r\n \r\n curtoBt.addEventListener('click', () => {\r\n   html.setAttribute('data-contexto', 'descanso-curto')\r\n"
+                },
+                {
+                    "date": 1700857779018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,11 @@\n })\r\n \r\n curtoBt.addEventListener('click', () => {\r\n   html.setAttribute('data-contexto', 'descanso-curto')\r\n+  banner.setAttribute('src', './imagens/descanso-curto.png')\r\n })\r\n \r\n longoBt.addEventListener('click', () => {\r\n   html.setAttribute('data-contexto', 'descanso-longo')\r\n+  banner.setAttribute('src', './imagens/descanso-longo.png')\r\n })\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1700856322463,
